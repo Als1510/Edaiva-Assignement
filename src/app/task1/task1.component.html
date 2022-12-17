@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="box">
+    <input type="number" #number placeholder="Enter any number">
+    <button (click)="getNumber(number)">Get Number at index</button>
+    <p *ngIf="answer">The number is {{answer}} and the index is {{index}}</p>
+  </div>
+</div>

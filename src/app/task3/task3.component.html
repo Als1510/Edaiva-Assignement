@@ -1,0 +1,17 @@
+<div class="container">
+  <form [formGroup]="myForm">
+    <div formArrayName="number" *ngFor="let num of this.fa?.value; let i = index;">
+      <div [formGroupName]="i">
+        <input placeholder="Enter Phone No" formControlName="from">
+      </div>
+      <span (click)="removeGroup(i)" *ngIf="myForm.get('number').value.length>1">X</span>
+    </div>
+    <button (click)="addGroup()">Add Phone Number</button>
+    <button (click)="onSubmit()">Submit</button>
+  </form>
+
+  <div class="result" *ngIf="phoneNo.length > 0">
+    <h2>Phone Numbers</h2>
+    <p *ngFor="let phone of phoneNo">{{phone.no}}</p>
+  </div>
+</div>
